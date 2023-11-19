@@ -1,0 +1,32 @@
+main {
+  display: grid;
+  place-items: center;
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.activityBlock {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  display: grid;
+  grid-template-columns: 25vw 40vw 20vw;
+  grid-column-gap: 5px;
+  place-items: center;
+}
+
+.activityLogo{
+  width: 20vw;
+  height: auto;
+}
+
+.activityService {
+  font-size:larger;
+}
+
+.activityDate, .activityPrice {
+  font-size:smaller;
+}

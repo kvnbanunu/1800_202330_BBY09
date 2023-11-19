@@ -1,0 +1,11 @@
+Text for logos and headers: archivo black 400 weight
+	
+	link:
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+	
+	css:
+	font-family: 'Archivo Black', sans-serif;
+
+Logo/ main colour code: #471AA0 / rgb(71, 26, 160)

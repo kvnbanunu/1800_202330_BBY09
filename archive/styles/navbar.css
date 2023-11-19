@@ -1,0 +1,77 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1em;
+  font-size: 2vw;
+  background-color: #471AA0;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw 25vw;
+  text-align: center;
+}
+
+.navbar a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.nav_img {
+  width: 10vw;
+  height: auto;
+}
+
+@media screen and (max-width: 720px) {
+  .nav_logo {
+    display: none;
+  }
+
+}
+
+/* Media Query for Desktop screens */
+@media screen and (min-width: 720px) {
+  .navbar {
+    grid-template-columns: 50vw 1fr 1fr 1fr 1fr;
+    padding-top: 0;
+    font-size: 1em;
+    top: 0;
+    bottom: auto;
+  }
+
+  .nav_img {
+    display: none;
+  }
+
+  .nav_button br {
+    display: none;
+  }
+
+  .nav_button {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav_logo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+  }
+
+  .nav_logo img {
+    display: grid;
+    place-items: center;
+    padding-top: 5px;
+    height: 50px;
+    width: auto;
+  }
+
+}

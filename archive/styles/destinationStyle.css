@@ -1,0 +1,118 @@
+body {
+    font-family: "Raleway", sans-serif
+}
+.main-banner {
+    width: 100%;
+}
+
+/* .search-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#destination-search, #departure-search {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 5px;
+}
+
+#search-button {
+    width: 10%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+} */
+
+.search-container {
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+}
+
+#departure-search,
+#destination-search {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+    margin-right: 5px;
+}
+
+#search-button {
+    width: 15%;
+    padding: 7px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+
+.custom-select {
+    display: none;
+}
+
+.custom-dropdown {
+    position: relative;
+    z-index: 99;
+    display: inline-block;
+    user-select: none;
+}
+
+.custom-dropdown .selected-option {
+    display: block;
+    background: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-dropdown .option-list {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.custom-dropdown .option {
+    display: block;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+.custom-card {
+    max-width: 100%;
+}

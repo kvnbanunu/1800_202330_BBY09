@@ -1,0 +1,74 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #f7f1ff;
+}
+
+.btn:hover{
+    box-shadow: 1px 1px 3px .5px rgba(0, 0, 0, 0.5);
+}
+
+.w3-content {
+    min-width: 100%;
+    margin: 0;
+}
+
+.main-banner, .myhero img {
+    width: 100%;
+    box-shadow: 1px 1px 8px .5px rgba(0, 0, 0, 0.5);
+}
+
+.signup {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 10px;
+}
+.signup p {
+    text-align: right;
+    margin: 0px;
+    margin-right: 10px;
+}
+.card {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 8rem;
+    box-shadow: 1px 1px 8px .5px rgba(0, 0, 0, 0.5);
+}
+.logo {
+    font-weight: bold;
+}
+
+.favouritescontainer  {
+	position: relative;
+	width: 98%;
+	background-color: var(--container);
+	border-radius: 4px;
+	box-shadow: 0.8em 0.8em 0 0 var(--accent-alpha);
+	border: 2px solid var(--accent);
+	margin-top: 1.5em;
+	padding: 0 2em;
+	box-sizing: border-box;
+    --accent: #7a24f2;
+	--accent-alpha: #7a24f2bb;
+	--text: #000;
+	--text-secondary: #000000cc;
+	--container: #fff;
+	--section-color: #fff;
+}
+
+.favouritescontainer section{
+	margin: 1.8em 0;
+}
+
+.favouritescontainer div{
+	margin-top: 0.5em;
+	font-size: 0.9em;
+	line-height: 1.6;
+}
+
+.favouritescontainer h1, h2{
+	padding: 0;
+	margin: 0;
+	margin-top: -0.3ch;
+	font-weight: 700;
+	color: var(--accent);
+}

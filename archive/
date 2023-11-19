@@ -1,0 +1,61 @@
+[33mcommit 3a1c264bf1dd342e80ecbeebb18c80af5a82115f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Sunwoo Baek <sunwooo0728@gmail.com>
+Date:   Fri Oct 13 02:45:50 2023 -0700
+
+    Added pictures and UI clickable buttons.
+
+[33mcommit 00edb3aaa4406b0d815eaa7b2f8e4e2e5ac4ced6[m
+Author: Patrick Hoang <patrickhoang0@gmail.com>
+Date:   Thu Oct 12 17:38:16 2023 -0700
+
+    Added a welcome message with different font
+
+[33mcommit 1fe440a7704e6a424adf847b0a1904fb47195f94[m
+Author: Patrick Hoang <patrickhoang0@gmail.com>
+Date:   Thu Oct 12 17:29:55 2023 -0700
+
+    Added a welcome message
+
+[33mcommit 39aba251e242f7f89167f9f9a6bfb8e5d49aef8e[m
+Author: Kevin Nguyen <kevinbanunu@outlook.com>
+Date:   Thu Oct 12 10:19:58 2023 -0700
+
+    added logo and navbar
+
+[33mcommit eea5d69c3ed8d3020a9e6e6f2f96dad7626d4679[m
+Merge: 0ae0e76 7c33c1c
+Author: Sunwoo Baek <sunwooo0728@gmail.com>
+Date:   Wed Sep 20 11:20:38 2023 -0700
+
+    Conflict on README resolved by Sunwoo
+
+[33mcommit 7c33c1c47735161fc0bc47e54dc4c83d0b1e9ec7[m
+Merge: d7eb96e c48d3ac
+Author: Kevin Nguyen <kevinbanunu@outlook.com>
+Date:   Wed Sep 20 11:09:43 2023 -0700
+
+    Merge branch 'main' of https://github.com/kvnbanunu/1800_202330_BBY09
+
+[33mcommit 0ae0e76e75d0505728acfeb3e0e87c9ec2f8c3a4[m
+Author: Sunwoo Baek <sunwooo0728@gmail.com>
+Date:   Wed Sep 20 11:08:31 2023 -0700
+
+    Added one line intro to README file for Sunwoo
+
+[33mcommit d7eb96e2697436a2ac85421907694e1639c62ea6[m
+Author: Kevin Nguyen <kevinbanunu@outlook.com>
+Date:   Wed Sep 20 11:06:21 2023 -0700
+
+    Added a description and one line intro to README file for Kevin
+
+[33mcommit c48d3acac55a83c68a24d5d96040f3a506badd3f[m
+Author: Patrick Hoang <patrickhoang0@gmail.com>
+Date:   Wed Sep 20 10:59:41 2023 -0700
+
+    Added a short intro to README.md file for Patrick
+
+[33mcommit 55623f85d2918dce880f16780dd3c4406afeb1b3[m
+Author: kvnbanunu <144873879+kvnbanunu@users.noreply.github.com>
+Date:   Wed Sep 20 10:49:16 2023 -0700
+
+    Initial commit

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>BusRoots</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
     <!------------------------>
@@ -40,33 +40,32 @@
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+  <!-- our own navbar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
-    <!-- stuff -->
-    <div class="container text-center">
-      <img class="d-block mx-auto mb-4 responsive" src="./images/elmo.jpg" alt="">
-      <h1>Welcome to BusRoots!</h1>
-      <a href="login.html" class="btn btn-info" role="button">Log in</a>
-    </div>
+  <!-- the body of your page goes here -->
+  <!-- stuff -->
+    
+  <div class="container">
+    <h1>Let's Login!</h1>
+  </div>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
 
-    <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+  <!-- our own footer goes here-->
+  <nav id="footerPlaceholder"></nav>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_TEAM09.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/script.js"></script>
-    <script>
-      logout();       //make sure user is logged out
-    </script>
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_TEAM09.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/authentication.js"></script>
+  <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 

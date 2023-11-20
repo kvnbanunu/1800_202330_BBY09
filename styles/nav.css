@@ -1,0 +1,24 @@
+#navbarPlaceholder {
+    font-size: 25px;
+}
+
+.navbar-nav li {
+    margin: 0px 30px;
+}
+
+.logo {
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.d-flex a {
+    padding: 8px 30px;
+    border-radius: 30px;
+    font-size: 25px;
+}

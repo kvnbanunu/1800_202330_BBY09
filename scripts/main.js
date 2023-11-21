@@ -27,3 +27,29 @@ function distance(lat1, lon1, lat2, lon2) {
 
   return 2 * r * Math.asin(Math.sqrt(a));
 }
+
+function getLat(stopNo) {
+  
+  db.collection("stopNo").doc(stopNo)
+    .onSnapshot(stopNoDoc => {
+      console.log(stopNoDoc.data().latitude);
+    })
+  
+  // var stopNo = document.getElementById("stopNo1").value
+  // var lat_ref = db.ref("stopNo/" + stopNo)
+  // lat_ref.on("value", function(snapshot) {
+  //   var data = snapshot.val()
+
+  //   console.log(data.latitude)
+
+  // })
+
+}
+
+function getLon(stopNo) {
+
+  db.collection("stopNo").doc(stopNo)
+    .onSnapshot(stopNoDoc => {
+      console.log(stopNoDoc.data().longitude);
+    })
+}

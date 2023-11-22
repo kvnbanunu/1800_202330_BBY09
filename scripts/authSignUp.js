@@ -1,4 +1,4 @@
-function signUp() {
+async function signUp() {
     // get user's info.
     const email = document.getElementById('signup-email').value;
     const username = document.getElementById('signup-username').value;
@@ -12,10 +12,18 @@ function signUp() {
         // Don't continue running the code
     }
 
-    // sign up the user.
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    try {
 
-        db.collection("users").doc(cred.user.uid).set({
+        // sign up the user.
+        const cred = await auth.createUserWithEmailAndPassword(email, password);
+
+        // Update user profile
+        await cred.user.updateProfile({
+            displayName: username
+        });
+
+        // Add user information to Firestore
+        await db.collection("users").doc(cred.user.uid).set({
             displayName: username,
             email: cred.user.email,
             account_created: Date.now(),
@@ -23,14 +31,33 @@ function signUp() {
             points: 0,
             treesPlanted: 0,
             treeLevel: 1
-        })
-        return cred.user.updateProfile({
-            displayName: username
-        })
-            .then(() => {
-                window.location.href = "main.html";
-            })
-    })
+
+        });
+
+        console.log('New user has been added to firesotre.');
+        window.location.assign("main.html");
+    } catch (error) {
+        console.log('Error adding new user: ' + error);
+    }
+    // sign up the user.
+    // auth.createUserWithEmailAndPassword(email, password).then(cred => {
+
+    //     db.collection("users").doc(cred.user.uid).set({
+    //         displayName: username,
+    //         email: cred.user.email,
+    //         account_created: Date.now(),
+    //         last_login: Date.now(),
+    //         points: 0
+    //     })
+    //     return cred.user.updateProfile({
+    //         displayName: username
+    //     }).then(function () {
+    //         console.log('New user has been added to firestore.');
+    //         window.location.assign("main.html");
+    //     }).catch(function (error) {
+    //         console.log('Error adding new user: ' + error);
+    //     });
+    // })
 
 }
 

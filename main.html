@@ -49,10 +49,13 @@
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div class="container-fluid bg-light text-dark p-5">
-      <div class="container bg-light p-5">
-          <h1 class="display-4">Hello, <span id="name-goes-here"></span>!</h1>
+    <div class="container-fluid bg-light text-dark p-2">
+      <div class="container bg-light p-2">
+          <h1 class="display-4">Hey, <span id="name-goes-here"></span>! Taking the bus today?</h1>
           <hr>
+          <p>Enter the stop# of the bus you got on and the stop# of where you got 
+            off to earn points! <br>Each km you travel by bus rewards you with 1 point. 
+            <br>Collect 100 points and we'll plant a tree!</p>
       </div>
     </div>
 
@@ -60,11 +63,33 @@
       <form>
         <div class="form-group">
           <label for="stopNo1">Bus Stop Start</label>
-          <input type="text" class="form-control" id="stopNo1" placeholder="55555" required>
+          <!-- <input type="text" class="form-control" id="stopNo1" placeholder="55555" required> -->
+          <select class="form-control" id="stopNo1" required>
+            <option>51392</option>
+            <option>51393</option>
+            <option>51455</option>
+            <option>51456</option>
+            <option>51457</option>
+            <option>51542</option>
+            <option>51543</option>
+            <option>51545</option>
+            <option>51546</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="stopNo2">Bus Stop End</label>
-          <input type="text" class="form-control" id="stopNo2" placeholder="55555" required>
+          <!-- <input type="text" class="form-control" id="stopNo2" placeholder="55555" required> -->
+          <select class="form-control" id="stopNo2" required>
+            <option>51392</option>
+            <option>51393</option>
+            <option>51455</option>
+            <option>51456</option>
+            <option>51457</option>
+            <option>51542</option>
+            <option>51543</option>
+            <option>51545</option>
+            <option>51546</option>
+          </select>
         </div>
         <br>
         <!-- <a href="reward.html"> -->
@@ -106,7 +131,16 @@
         <div class="row">
           <div class="col">
             <label for="points">Points Earned</label>
-            <input type="text" class="form-control" id="points">
+            <input type="text" readonly class="form-control-plaintext" id="points">
+          </div>
+          <div class="col">
+            <label for="currentPoints">Current Points</label>
+            <input type="text" readonly class="form-control-plaintext" id="currentPoints">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><span id="nextTree"></span> more point(s) until the next tree is planted. You've helped plant <span id="noTrees"></span> trees!</p>
           </div>
         </div>
       </form>

@@ -23,7 +23,8 @@ var uiConfig = {
                  country: "Canada",                      //optional default profile info      
                  school: "BCIT",                          //optional default profile info
                  points: 0,
-                 treesPlanted: 0
+                 treesPlanted: 0,
+                 treeLevel: 1
           }).then(function () {
                  console.log("New user added to firestore");
                  window.location.assign("main.html");       //re-direct to main.html after signup

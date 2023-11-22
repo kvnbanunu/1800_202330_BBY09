@@ -16,6 +16,20 @@ function getNameFromAuth() {
 }
 getNameFromAuth(); //run the function
 
+function populateCurrentPoints() {
+  firebase.auth().onAuthStateChanged(user => {
+    var currentPoints = db.collection("users").doc(user.uid);
+    currentPoints.get()
+      .then(userDoc => {
+        var cp = userDoc.data().points;
+        document.getElementById("currentPoints").value = cp;
+      })
+  })
+  
+}
+populateCurrentPoints();
+
+
 // Haversine formula to find the distance(km) between two sets of latitudes and longitudes.
 function distance(lat1, lon1, lat2, lon2) {
   const r = 6371; // km
@@ -50,7 +64,7 @@ function populateLocation() {
 }
 
 function gainPoints() {
-  // var user = firebase.auth().currentUser;
+  
   var km = distance(
     document.getElementById("lat1").value, 
     document.getElementById("lon1").value, 
@@ -58,15 +72,48 @@ function gainPoints() {
     document.getElementById("lon2").value
     );
   
-  // var pointsBefore = db.collection("users").doc(user.uid).data().points;
-  
   var pointsEarned = Math.round(km * 10);
   console.log("Points Earned: " + pointsEarned);
   document.getElementById("points").value = pointsEarned;
-  // var pointsTotal = pointsBefore + pointsEarned;
-  
-  
-  // db.collection("users").doc(user.uid).update({
-  //   points: pointsTotal
-  // });
+
+  firebase.auth().onAuthStateChanged(user => {
+    var userPoints = db.collection("users").doc(user.uid);
+    userPoints.get()
+      .then(pointsDoc => {
+        var treeLvl = pointsDoc.data().treeLevel;
+        var nextTree = 100 * treeLvl
+        var treesPlanted = pointsDoc.data().treesPlanted;
+        var currentPoints = pointsDoc.data().points;
+        var pointsTotal = currentPoints + pointsEarned;
+        if (pointsTotal >= nextTree) {
+          ++treeLvl;
+          ++treesPlanted;
+          userPoints.update({
+            treeLevel: treeLvl,
+            treesPlanted: treesPlanted
+          })
+        }
+        userPoints.update({
+          points: pointsTotal
+        })
+        .then(populateCurrentPoints())
+        .then(populateTrees())
+      })
+  });
+
 }
+
+function populateTrees() {
+  firebase.auth().onAuthStateChanged(user => {
+    var userTrees = db.collection("users").doc(user.uid);
+    userTrees.get()
+      .then(treeDoc => {
+        var treeLvl = 100 * treeDoc.data().treeLevel;
+        var nextTree = treeLvl - treeDoc.data().points;
+        var noTrees = treeDoc.data().treesPlanted;
+        document.getElementById("nextTree").innerText = nextTree;
+        document.getElementById("noTrees").innerText = noTrees;
+      })
+  })
+}
+populateTrees();

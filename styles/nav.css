@@ -2,6 +2,10 @@
     font-size: 25px;
 }
 
+.bg-info {
+    background-color: rgb(206, 255, 200) !important;
+}
+
 .navbar-nav li {
     margin: 0px 30px;
 }

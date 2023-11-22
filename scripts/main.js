@@ -28,28 +28,45 @@ function distance(lat1, lon1, lat2, lon2) {
   return 2 * r * Math.asin(Math.sqrt(a));
 }
 
-function getLat(stopNo) {
-  
-  db.collection("stopNo").doc(stopNo)
-    .onSnapshot(stopNoDoc => {
-      console.log(stopNoDoc.data().latitude);
+function populateLocation() {
+
+  var stop1 = db.collection("stopNo").doc(document.getElementById("stopNo1").value)
+  stop1.get()
+    .then(stopDoc => {
+      var lat1 = stopDoc.data().latitude;
+      var lon1 = stopDoc.data().longitude;
+      document.getElementById("lat1").value = lat1;
+      document.getElementById("lon1").value = lon1;
     })
-  
-  // var stopNo = document.getElementById("stopNo1").value
-  // var lat_ref = db.ref("stopNo/" + stopNo)
-  // lat_ref.on("value", function(snapshot) {
-  //   var data = snapshot.val()
 
-  //   console.log(data.latitude)
-
-  // })
-
+  var stop2 = db.collection("stopNo").doc(document.getElementById("stopNo2").value)
+  stop2.get()
+    .then(stopDoc => {
+      var lat2 = stopDoc.data().latitude;
+      var lon2 = stopDoc.data().longitude;
+      document.getElementById("lat2").value = lat2;
+      document.getElementById("lon2").value = lon2;
+    })
 }
 
-function getLon(stopNo) {
-
-  db.collection("stopNo").doc(stopNo)
-    .onSnapshot(stopNoDoc => {
-      console.log(stopNoDoc.data().longitude);
-    })
+function gainPoints() {
+  // var user = firebase.auth().currentUser;
+  var km = distance(
+    document.getElementById("lat1").value, 
+    document.getElementById("lon1").value, 
+    document.getElementById("lat2").value, 
+    document.getElementById("lon2").value
+    );
+  
+  // var pointsBefore = db.collection("users").doc(user.uid).data().points;
+  
+  var pointsEarned = Math.round(km * 10);
+  console.log("Points Earned: " + pointsEarned);
+  document.getElementById("points").value = pointsEarned;
+  // var pointsTotal = pointsBefore + pointsEarned;
+  
+  
+  // db.collection("users").doc(user.uid).update({
+  //   points: pointsTotal
+  // });
 }

@@ -36,6 +36,8 @@
     <!-------------------------------------------->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/nav.css">
 
 </head>
 
@@ -65,7 +67,49 @@
           <label for="stopNo2">Bus Stop End</label>
           <input type="text" class="form-control" id="stopNo2" placeholder="55555" required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <!-- <a href="reward.html"> -->
+        <button type="button" class="btn btn-primary" onclick="populateLocation()">Submit</button>
+        <!-- </a> -->
+        <!-- <a href="" class="btn btn-primary" role="button" onclick="gainPoints()">Submit</a> -->
+      </form>
+    </div>
+
+    <div class="container-fluid bg-light text-dark p-5">
+      <form>
+        <div class="row">
+          <div class="col">
+            <label for="lat1">Latitude 1</label>
+            <input type="text" class="form-control" id="lat1">
+          </div>
+          <div class="col">
+            <label for="lon1">Longitude 1</label>
+            <input type="text" class="form-control" id="lon1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="lat2">Latitude 2</label>
+            <input type="text" class="form-control" id="lat2">
+          </div>
+          <div class="col">
+            <label for="lon2">Longitude 2</label>
+            <input type="text" class="form-control" id="lon2">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="gainPoints()">Get Points!</button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label for="points">Points Earned</label>
+            <input type="text" class="form-control" id="points">
+          </div>
+        </div>
       </form>
     </div>
 

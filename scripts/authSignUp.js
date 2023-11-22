@@ -20,7 +20,9 @@ function signUp() {
             email: cred.user.email,
             account_created: Date.now(),
             last_login: Date.now(),
-            points: 0
+            points: 0,
+            treesPlanted: 0,
+            treeLevel: 1
         })
         return cred.user.updateProfile({
             displayName: username

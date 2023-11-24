@@ -1,7 +1,7 @@
 async function signUp() {
     // get user's info.
     const email = document.getElementById('signup-email').value;
-    const username = document.getElementById('signup-username').value;
+    const userName = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
 
 
@@ -19,12 +19,12 @@ async function signUp() {
 
         // Update user profile
         await cred.user.updateProfile({
-            displayName: username
+            displayName: userName
         });
 
         // Add user information to Firestore
         await db.collection("users").doc(cred.user.uid).set({
-            displayName: username,
+            displayName: userName,
             email: cred.user.email,
             account_created: Date.now(),
             last_login: Date.now(),

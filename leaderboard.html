@@ -48,23 +48,34 @@
 
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
-
+    
     <!-- the body of your page goes here -->
-    <button onclick="sortData()">Sort by Team</button>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Team</th>
-                <th>Points</th>
-                <th>Trees Planted</th>
-            </tr>
-        </thead>
-        <tbody id="leaderboard-default">
+    <div id="button-container">
+        <button id="btn-individual" type="button" class="btn btn-success" onclick="showIndividualTable()">Individual Ranking</button>
+        <button id="btn-team" type="button" class="btn btn-success" onclick="showTeamTables()">Team Ranking</button>
+    </div>
+    <div id="leaderboards">
+    <div id="individualTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Trees Planted</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-default">
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
+    <div id="teamTables" style="display:none;">
+        <!-- Team tables will be displayed here -->
+    </div>
+    </div>
     <!-- stuff -->
 
     <!-- our own footer goes here-->

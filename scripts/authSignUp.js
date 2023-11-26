@@ -35,7 +35,7 @@ async function signUp() {
         });
 
         console.log('New user has been added to firestore.');
-        window.location.assign("main.html");
+        window.location.assign("team.html");
     } catch (error) {
         console.log('Error adding new user: ' + error);
     }

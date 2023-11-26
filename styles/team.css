@@ -1,0 +1,42 @@
+.highlighted {
+  border: 2px solid lightskyblue;
+}
+
+#main-container {
+  display: grid;
+  grid-template-areas:
+    "pick"
+    "teams";
+  place-items: center;
+}
+
+#pick {
+  grid-area: pick;
+  font-size: 32pt;
+}
+
+#team-container {
+  grid-area: teams;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+}
+
+.teamSelect {
+  display: grid;
+  grid-template-rows: 75% 1fr;
+  place-items: center;
+}
+
+.teamSelect:hover {
+  cursor: pointer;
+}
+
+.team-text {
+  font-size: 16pt;
+}
+
+.teamImg {
+  width: 100px;
+  height: auto;
+}

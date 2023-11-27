@@ -3,6 +3,7 @@
 //-------------------------------------------------
 function logout() {
   firebase.auth().signOut().then(() => {
+
       // Sign-out successful.
       alert('See you next time!');
     }).catch((error) => {

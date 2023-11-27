@@ -27,6 +27,10 @@
     height: auto;
 }
 
+.main-contents {
+    height: auto;
+}
+
 #signup-form.pb-5 {
     padding-bottom: 0 !important;
 }

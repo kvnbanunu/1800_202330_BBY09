@@ -2,12 +2,26 @@
     font-size: 25px;
 }
 
+
 .bg-info {
-    background-color: rgb(211, 244, 207) !important;
+    background-color: rgb(218, 247, 166) !important;
+    height: 100px;
+}
+
+nav .container-fluid {
+    background-color: rgb(218, 247, 166) !important;
+    z-index: 1;
+
 }
 
 .navbar-nav li {
     margin: 0px 30px;
+}
+
+.d-flex {
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo {

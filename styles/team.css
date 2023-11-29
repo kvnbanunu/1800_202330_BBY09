@@ -1,6 +1,6 @@
 .highlighted {
-  border: 3px solid lightskyblue;
-  border-radius: 2%;
+  background-color: lightgreen;
+  border-radius: 1%;
 }
 
 #main-contents {
@@ -40,6 +40,7 @@
 
 .teamSelect:hover {
   cursor: pointer;
+  background-color: lightgreen;
 }
 
 .team-text {

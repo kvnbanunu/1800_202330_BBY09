@@ -129,7 +129,8 @@ async function gainPoints() {
           points: pointsTotal
         })
         .then(populateCurrentPoints())
-        .then(populateTrees());
+        .then(populateTrees())
+        .then(alert("Congratulations! You earned " + pointsEarned + "!"));
       })
   });
 }

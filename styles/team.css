@@ -1,5 +1,6 @@
 .highlighted {
-  border: 2px solid lightskyblue;
+  border: 3px solid lightskyblue;
+  border-radius: 2%;
 }
 
 #main-contents {
@@ -28,8 +29,8 @@
 
 .teamSelect {
   display: grid;
-  grid-template-rows: 90% 1fr;
-  height: auto;
+  grid-template-rows: 1fr 10%;
+  height: 40vw;
   place-items: center;
 }
 
@@ -46,6 +47,6 @@
 }
 
 .teamImg {
-  width: 25vw;
+  width: 20vw;
   height: auto;
 }

@@ -26,7 +26,8 @@ th {
 }
 
 .rankImg {
-    width: 30px;
+    width: 4vw;
+    height: auto;
 }
 
 #btn-individual.btn {

@@ -107,9 +107,9 @@ function showTeamTables() {
                     teamHeading = `<img src="./images/bronze-tree.png" alt="Bronze" class="rankImg">`;
                 }
 
-                teamHeading += `<span style="margin-left: 20px;">${teamName}</span>`;
-                teamHeading += `<span style="margin-left: 20px;">Total Points: ${totalPoints}</span>`;
-                teamHeading += `<span style="margin-left: 20px;">Total Trees Planted: ${totalTreesPlanted}</span>`;
+                teamHeading += `<span style="margin-left: 10px;">${teamName}</span>`;
+                teamHeading += `<span style="margin-left: 10px;">Total Points: ${totalPoints}</span>`;
+                teamHeading += `<span style="margin-left: 10px;">Total Trees Planted: ${totalTreesPlanted}</span>`;
 
                 teamTable.innerHTML = `
                     <thead>

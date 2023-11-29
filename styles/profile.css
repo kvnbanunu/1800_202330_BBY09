@@ -1,0 +1,18 @@
+.main-contents {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.main-contents h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#mypic-goes-here {
+    border-radius: 50%;
+
+}

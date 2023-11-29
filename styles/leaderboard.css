@@ -36,3 +36,7 @@ th {
 #btn-team.btn {
     margin: 15px;
 }
+
+#leaderboards tbody {
+    background-color: white;
+}

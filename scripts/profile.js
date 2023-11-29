@@ -5,10 +5,32 @@ function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
 }
 
+let fbAuth = firebase.auth();
+
+function getNameFromAuth() {
+    fbAuth.onAuthStateChanged(user => {
+      // Check if user is signed in:
+      if (user) {
+        //Do something for the currently logged-in user here:
+        fbAuth.onAuthStateChanged(user => {
+          let userID = db.collection("users").doc(user.uid);
+          userID.get()
+          .then(userDetails => {
+            userName = userDetails.data().displayName;
+            document.getElementById("name-goes-here").innerText = userName;
+          })
+        })
+      } else {
+        // No user is signed in.
+      }
+    })
+  }
+  getNameFromAuth();
+
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
         var storageRef = storage.ref("images/" + user.uid + ".jpg");
-        var ImageFile = document.getElementById('mypic-input').value;
+        var ImageFile = document.getElementById('mypic-input').files[0];
 
         //Asynch call to put File Object (global variable ImageFile) onto Cloud
         storageRef.put(ImageFile)

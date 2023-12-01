@@ -75,6 +75,10 @@ function joinTeam() {
         });
       }
   } else {
-      alert('No team selected');
+    Swal.fire({
+      title: "No team seleced",
+      text: "Please select a team",
+      icon: "error"
+    });
   }
 }

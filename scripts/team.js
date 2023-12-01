@@ -5,7 +5,7 @@ async function pickOak() {
     await db.collection("users").doc(user.uid).update({
       team: "Oak"
     });
-    window.location.assign("main.html");
+    // window.location.assign("main.html");
   })
 }
 
@@ -14,7 +14,7 @@ async function pickMaple() {
     await db.collection("users").doc(user.uid).update({
       team: "Maple"
     });
-    window.location.assign("main.html");
+    // window.location.assign("main.html");
   })
 }
 
@@ -23,7 +23,7 @@ async function pickEvergreen() {
     await db.collection("users").doc(user.uid).update({
       team: "Evergreen"
     });
-    window.location.assign("main.html");
+    // window.location.assign("main.html");
   })
 }
 
@@ -42,13 +42,37 @@ function joinTeam() {
       const imageAlt = highlightedImage.querySelector('img').alt;
       if (imageAlt === 'Oak') {
         pickOak();
-        alert('You have joined team Oak!');
+        // alert('You have joined team Oak!');
+        Swal.fire({
+          title: "You have joined team Oak!",
+          icon: "success"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.assign("main.html");
+          }
+        });
       } else if (imageAlt === 'Maple') {
         pickMaple();
-        alert('You have joined team Maple!');
+        // alert('You have joined team Maple!');
+        Swal.fire({
+          title: "You have joined team Maple!",
+          icon: "success"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.assign("main.html");
+          }
+        });
       } else if (imageAlt === 'Evergreen') {
         pickEvergreen();
-        alert('You have joined team Evergreen!');
+        // alert('You have joined team Evergreen!');
+        Swal.fire({
+          title: "You have joined team Evergreen!",
+          icon: "success"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.assign("main.html");
+          }
+        });
       }
   } else {
       alert('No team selected');

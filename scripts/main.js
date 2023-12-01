@@ -93,8 +93,9 @@ async function getLocation() {
       }
     });
     let data1 = await response1.json();
+
     lat1 = data1.Latitude;
-    lon1 = data1 .Longitude;
+    lon1 = data1.Longitude;
 
     let response2 = await fetch(url2, {
       headers: {
@@ -104,6 +105,7 @@ async function getLocation() {
     let data2 = await response2.json();
     lat2 = data2.Latitude;
     lon2 = data2.Longitude;
+
   } catch (error) {
     console.error('Error:', error);
   }
@@ -119,7 +121,16 @@ async function gainPoints() {
   console.log("lon2: " + lon2);
   let km = distance(lat1, lon1, lat2, lon2);
   console.log(km);
-  let pointsEarned = Math.floor(km * 10);
+  let pointsEarned = Math.floor(km);
+  if (isNaN(pointsEarned)) {
+    console.error("Invalid points");
+    // alert("This bus stop does not seem to exist. Please enter a real bus stop.");
+    Swal.fire({
+      title: "This bus stop does not seem to exist. Please enter a real bus stop.",
+      icon: "error"
+    });
+    return;
+  }
   if (pointsEarned < 1) {
     pointsEarned = 1;
   } else {};
@@ -153,8 +164,20 @@ async function gainPoints() {
 function printReward(newPoints) {
   if (newTreeLevel === true) {
     newTreeLevel = false;
-    alert("Congratulations! You just earned " + newPoints + " points and planted a new tree!")
+    let newPoints1 = "You just earned " + newPoints + " points and planted a new tree!"
+    // alert("Congratulations! You just earned " + newPoints + " points and planted a new tree!");
+    Swal.fire({
+      title: "Congratulations!",
+      text: newPoints1,
+      icon: "success"
+    });
   } else {
-    alert("Congratulations! You just earned " + newPoints + " points!")
+    let newPoints2 = "You just earned " + newPoints + " points!"
+    // alert("Congratulations! You just earned " + newPoints + " points!");
+    Swal.fire({
+      title: "Congratulations!",
+      text: newPoints2,
+      icon: "success"
+    });
   }
 }

@@ -1,0 +1,18 @@
+.points-bar {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid black;
+}
+
+.progress-bar {
+  width: 0;
+  height: 30px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}

@@ -26,11 +26,24 @@ function populateCurrentPoints() {
     userID.get()
     .then(userDoc => {
       cp = userDoc.data().points;
-      document.getElementById("currentPoints").value = cp;
+      document.getElementById("currentPoints").innerText = cp;
+      updateProgressBar(progressBar, cp);
     })
   })
 }
 populateCurrentPoints();
+
+const progressBar = document.getElementById("myProgressBar");
+
+function updateProgressBar(progressBar, totalPoints) {
+  const progressWidth = totalPoints % 100;
+
+  progressBar.style.width = progressWidth + "%";
+
+  if (progressWidth === 0) {
+    progressBar.style.width = "0%";
+  }
+}
 
 function distance(lat1, lon1, lat2, lon2) {
   const r = 6371; // km
@@ -97,6 +110,7 @@ async function getLocation() {
 }
 
 let pointsTotal = 0;
+let newTreeLevel = false;
 async function gainPoints() {
   await getLocation();
   console.log("lat1: " + lat1);
@@ -110,7 +124,7 @@ async function gainPoints() {
     pointsEarned = 1;
   } else {};
   console.log("Points Earned: " + pointsEarned);
-  document.getElementById("points").value = pointsEarned;
+  // document.getElementById("points").value = pointsEarned;
 
   fbAuth.onAuthStateChanged(user => {
     let userID = db.collection("users").doc(user.uid);
@@ -118,6 +132,7 @@ async function gainPoints() {
       .then(pointsDoc => {
         pointsTotal = cp + pointsEarned;
         if (pointsTotal >= treeLvlThreshold) {
+          newTreeLevel = true;
           ++treeLvl;
           ++noTrees;
           userID.update({
@@ -130,7 +145,16 @@ async function gainPoints() {
         })
         .then(populateCurrentPoints())
         .then(populateTrees())
-        .then(alert("Congratulations! You earned " + pointsEarned + "!"));
+        .then(printReward(pointsEarned));
       })
   });
+}
+
+function printReward(newPoints) {
+  if (newTreeLevel === true) {
+    newTreeLevel = false;
+    alert("Congratulations! You just earned " + newPoints + " points and planted a new tree!")
+  } else {
+    alert("Congratulations! You just earned " + newPoints + " points!")
+  }
 }

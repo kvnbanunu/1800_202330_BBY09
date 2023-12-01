@@ -51,27 +51,38 @@
 
     <div class="main-contents">
       <!-- the body of your page goes here -->
-      <div class="container-fluid bg-light text-dark p-2">
-        <div class="container bg-light p-2">
-            <h1 class="display-4">Hey, <span id="name-goes-here"></span>! Taking the bus today?</h1>
-            <hr>
-            <p>Enter the stop# of the bus you got on and the stop# of where you got 
-              off to earn points! <br>Each km you travel by bus rewards you with 1 point. 
-              <br>Collect 100 points and we'll plant a tree!</p>
-        </div>
+
+      <div class="container-fluid bg-light text-dark p-5">
+          <h1 class="display-4">Hey, <span id="name-goes-here"></span>! Taking the bus today?</h1>
+          <hr>
+          <p>Enter the stop# of the bus you got on and the stop# of where you got 
+            off to earn points! <br>Each km you travel by bus rewards you with 1 point. 
+            <br>Collect 100 points and we'll plant a tree!</p>
+      </div>
+
+      <div class="container-fluid bg-light p-5">
+        <form>
+          <div class="form-group">
+            <div class="points-bar">
+              Current Points: <span id="currentPoints">current points</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="progress-container">
+              <div class="progress-bar" id="myProgressBar"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="points-bar">
+              <p><span id="nextTree"></span> more points until the next tree is planted.</p>
+              <p>You've helped plant <span id="noTrees"></span> trees!</p>
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="container-fluid bg-light text-dark p-5">
         <form>
-          <div class="row">
-            <div class="col">
-              <label for="currentPoints">Current Points</label>
-              <input type="text" readonly class="form-control-plaintext" id="currentPoints">
-            </div>
-            <div class="col">
-              <p><span id="nextTree"></span> more point(s) until the next tree is planted. You've helped plant <span id="noTrees"></span> trees!</p>
-            </div>
-          </div>
           <div class="form-group">
             <label for="stopNo1">Bus Stop Start</label>
             <input type="text" class="form-control" id="stopNo1" placeholder="55555" required>
@@ -84,41 +95,6 @@
           <button type="button" class="btn btn-success" onclick="gainPoints()">Submit</button>
         </form>
       </div>
-
-      <!-- <div class="container-fluid bg-light text-dark p-5">
-        <form>
-          <div class="row">
-            <div class="col">
-              <label for="points">Points Earned</label>
-              <input type="text" readonly class="form-control-plaintext" id="points">
-            </div>
-            <div class="col">
-              <label for="currentPoints">Current Points</label>
-              <input type="text" readonly class="form-control-plaintext" id="currentPoints">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p><span id="nextTree"></span> more point(s) until the next tree is planted. You've helped plant <span id="noTrees"></span> trees!</p>
-            </div>
-          </div>
-        </form>
-      </div> -->
-
-      <!-- <div class="container-fluid bg-light text-dark p-5">
-        <form>
-          <div class="form-group">
-            <label for="stopNo1">Bus Stop Start</label>
-            <input type="text" class="form-control" id="stopNo1" placeholder="55555" required>
-          </div>
-          <div class="form-group">
-            <label for="stopNo2">Bus Stop End</label>
-            <input type="text" class="form-control" id="stopNo2" placeholder="55555" required>
-          </div>
-          <br>
-          <button type="button" class="btn btn-success" onclick="gainPoints()">Submit</button>
-        </form>
-      </div> -->
 
     </div>
 

@@ -1,7 +1,9 @@
 .main-contents {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 70vw;
     grid-template-rows: auto 1fr;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-contents h1 {

@@ -10,11 +10,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px 0 5px 0;
 }
 
 
 
 #mypic-goes-here {
     border-radius: 50%;
+    border: 5px solid black;
+    object-fit: cover;
+    margin: 10px 0 10px 0;
+}
 
+#mypic-input {
+    width: 190px;
+}
+
+#profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 !important;
 }

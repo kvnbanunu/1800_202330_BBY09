@@ -47,7 +47,7 @@
     width: 100%;
     bottom: 0;
     background-color: rgb(218, 247, 166) !important;
-    display: flex;
+    position: absolute;
     align-items: center !important;
     justify-content: center !important;
     margin: 0 !important;

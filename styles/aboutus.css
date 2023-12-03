@@ -1,0 +1,32 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-description {
+    max-width: 600px;
+}
+

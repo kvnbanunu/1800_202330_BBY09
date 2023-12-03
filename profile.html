@@ -62,7 +62,7 @@
         <h1><span id="name-goes-here"></span>'s Profile </h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
-                <div class="container text-center py-3">
+                <div id="profile-container" class="container text-center py-3">
                     <img id="mypic-goes-here" src="./images/defaultPic.png" width=200 height=200 />
                     <input type="file" id="mypic-input" accept="image/*" />
                 </div>
@@ -83,7 +83,7 @@
             <div class="d-flex justify-content-end mt-5">
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
                 <span style="width: 10px"></span>
-                <button type="button" class="btn btn-success" onclick="saveUserInfo()">Save</button>
+                <button type="button" class="btn btn-success" onclick="saveAndPopulate()">Save</button>
             </div>
         </form>
     </div>

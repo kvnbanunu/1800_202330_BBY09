@@ -9,62 +9,81 @@ let fbAuth = firebase.auth();
 
 function getNameFromAuth() {
     fbAuth.onAuthStateChanged(user => {
-      // Check if user is signed in:
-      if (user) {
-        //Do something for the currently logged-in user here:
-        fbAuth.onAuthStateChanged(user => {
-          let userID = db.collection("users").doc(user.uid);
-          userID.get()
-          .then(userDetails => {
-            userName = userDetails.data().displayName;
-            document.getElementById("name-goes-here").innerText = userName;
-          })
-        })
-      } else {
-        // No user is signed in.
-      }
+        // Check if user is signed in:
+        if (user) {
+            //Do something for the currently logged-in user here:
+            fbAuth.onAuthStateChanged(user => {
+                let userID = db.collection("users").doc(user.uid);
+                userID.get()
+                    .then(userDetails => {
+                        userName = userDetails.data().displayName;
+                        document.getElementById("name-goes-here").innerText = userName;
+                    })
+            })
+        } else {
+            // No user is signed in.
+        }
     })
-  }
-  getNameFromAuth();
+}
+getNameFromAuth();
 
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
         var storageRef = storage.ref("images/" + user.uid + ".jpg");
         var ImageFile = document.getElementById('mypic-input').files[0];
 
-        //Asynch call to put File Object (global variable ImageFile) onto Cloud
-        storageRef.put(ImageFile)
-            .then(function () {
-                console.log('Uploaded to Cloud Storage.');
+        if (ImageFile != null) {
+            //Asynch call to put File Object (global variable ImageFile) onto Cloud
+            storageRef.put(ImageFile)
+                .then(function () {
+                    console.log('Uploaded to Cloud Storage.');
 
-                //Asynch call to get URL from Cloud
-                storageRef.getDownloadURL()
-                    .then(function (url) { // Get "url" of the uploaded file
-                        console.log("Got the download URL.");
-                        //get values from the from
-                        userName = document.getElementById('nameInput').value;
-                        // userSchool = document.getElementById('schoolInput').value;
-                        // userCity = document.getElementById('cityInput').value;
+                    //Asynch call to get URL from Cloud
+                    storageRef.getDownloadURL()
+                        .then(function (url) { // Get "url" of the uploaded file
+                            console.log("Got the download URL.");
+                            //get values from the from
+                            userName = document.getElementById('nameInput').value;
+                            // userSchool = document.getElementById('schoolInput').value;
+                            // userCity = document.getElementById('cityInput').value;
 
-                        //Asynch call to save the form fields into Firestore.
-                        db.collection("users").doc(user.uid).update({
-                            name: userName,
-                            // school: userSchool,
-                            // city: userCity,
-                            profilePic: url // Save the URL into users collection
-                        })
-                            .then(function () {
-                                console.log('Added Profile Pic URL to Firestore.');
-                                console.log('Saved user profile info');
-                                document.getElementById('personalInfoFields').disabled = true;
+                            db.collection("users").doc(user.uid).update({
+                                displayName: userName,
+                                // school: userSchool,
+                                // city: userCity,
+                                profilePic: url // Save the URL into users collection
                             })
-                    })
+                                .then(function () {
+                                    console.log('Added Profile Pic URL to Firestore.');
+                                    console.log('Saved user profile info');
+                                    console.log('User name is: ' + userName)
+                                    document.getElementById('personalInfoFields').disabled = true;
+                                    // populateInfo();
+                                })
+                        })
+                })
+        } else {
+            userName = document.getElementById('nameInput').value;
+            // userSchool = document.getElementById('schoolInput').value;
+            // userCity = document.getElementById('cityInput').value;
+
+            db.collection("users").doc(user.uid).update({
+                displayName: userName,
+                // school: userSchool,
+                // city: userCity,
+                // profilePic: url // Save the URL into users collection
             })
+                .then(function () {
+                    console.log('Added Profile Pic URL to Firestore.');
+                    console.log('Saved user profile info');
+                    console.log('User name is: ' + userName)
+                    document.getElementById('personalInfoFields').disabled = true;
+                    // populateInfo();
+                })
+        }
     })
 }
 
-
-// Something is wrong with the URL, but I'm not sure how to fix it yet.
 
 
 function populateInfo() {
@@ -82,6 +101,8 @@ function populateInfo() {
 
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
+                        document.getElementById("name-goes-here").value = userName;
+                        console.log('name is now: ' + userName);
                     }
                     // if (userSchool != null) {
                     //     document.getElementById("schoolInput").value = userSchool;
@@ -108,5 +129,16 @@ function populateInfo() {
     )
 
 }
-
 populateInfo();
+
+
+function saveAndPopulate() {
+    saveUserInfo(); // Call the first function
+
+    // Delay the second function by 5000 milliseconds (5 seconds)
+    setTimeout(function () {
+        populateInfo();
+        // Refresh the page after populateInfo() is done
+        location.reload();
+    }, 800);
+}

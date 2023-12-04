@@ -44,11 +44,13 @@ function saveUserInfo() {
                             console.log("Got the download URL.");
                             //get values from the from
                             userName = document.getElementById('nameInput').value;
+                            teamName = document.getElementById("team-select").value;
                             // userSchool = document.getElementById('schoolInput').value;
                             // userCity = document.getElementById('cityInput').value;
 
                             db.collection("users").doc(user.uid).update({
                                 displayName: userName,
+                                team: teamName,
                                 // school: userSchool,
                                 // city: userCity,
                                 profilePic: url // Save the URL into users collection
@@ -64,11 +66,13 @@ function saveUserInfo() {
                 })
         } else {
             userName = document.getElementById('nameInput').value;
+            teamName = document.getElementById('team-select').value;
             // userSchool = document.getElementById('schoolInput').value;
             // userCity = document.getElementById('cityInput').value;
 
             db.collection("users").doc(user.uid).update({
                 displayName: userName,
+                team: teamName
                 // school: userSchool,
                 // city: userCity,
                 // profilePic: url // Save the URL into users collection
@@ -95,7 +99,7 @@ function populateInfo() {
             currentUser.get()
                 .then(userDoc => {
                     let userName = userDoc.data().displayName;
-                    // let userSchool = userDoc.data().school;
+                    let teamName = userDoc.data().team;
                     // let userCity = userDoc.data().city;
                     let picUrl = userDoc.data().profilePic;
 
@@ -103,6 +107,10 @@ function populateInfo() {
                         document.getElementById("nameInput").value = userName;
                         document.getElementById("name-goes-here").value = userName;
                         console.log('name is now: ' + userName);
+                    }
+
+                    if (teamName != null) {
+                        document.getElementById("team-select").value = teamName;
                     }
                     // if (userSchool != null) {
                     //     document.getElementById("schoolInput").value = userSchool;

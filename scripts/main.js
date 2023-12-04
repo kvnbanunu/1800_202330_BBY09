@@ -122,11 +122,12 @@ async function gainPoints() {
   let km = distance(lat1, lon1, lat2, lon2);
   console.log(km);
   let pointsEarned = Math.floor(km);
-  if (isNaN(pointsEarned)) {
+  if (isNaN(pointsEarned)) { //Checks if the the result is NaN
     console.error("Invalid points");
     // alert("This bus stop does not seem to exist. Please enter a real bus stop.");
     Swal.fire({
-      title: "This bus stop does not seem to exist. Please enter a real bus stop.",
+      title: "This bus stop does not seem to exist.",
+      text: "Please enter a real bus stop.",
       icon: "error"
     });
     return;

@@ -23,10 +23,6 @@
     max-width: 500px;
 }
 
-#footerBar {
-    bottom: auto;
-}
-
 @media (max-width: 992px) {
     .about-container {
         flex-direction: column;

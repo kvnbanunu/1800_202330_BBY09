@@ -37,11 +37,7 @@
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/nav.css">
-  <style>
-    #footerBar {
-      bottom: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./styles/bigContent.css">
 
 </head>
 
@@ -77,7 +73,20 @@
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/script.js"></script>
   <script>
-    logout();       //make sure user is logged out
+    // logout();
+
+    // Get the value of the 'logout' query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const logoutParam = urlParams.get('logout');
+
+    // Check if the 'logout' parameter is present and has a specific value
+    if (logoutParam === 'success') {
+      // Display a success message
+      alert('See you next time!');
+    } else if (logoutParam === 'error') {
+      // Display an error message
+      alert('An error occurred during logout.');
+    }
   </script>
 
 </body>

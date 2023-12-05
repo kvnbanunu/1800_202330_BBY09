@@ -2,3 +2,11 @@
 *.logs
 node_modules/
 .vscode/
+scripts/firebaseAPI_TEAM09.js
+.firebase/
+.firebaserc
+404.html
+firebase.json
+firestore.indexes.json
+firestore.rules
+storage.rules

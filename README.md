@@ -1,5 +1,4 @@
-# Project Title
-BusRoots
+# BusRoots
 
 ## 1. Project Description
 BusRoots encourages everyone to take transit by rewarding users points for every trip they take. Trees are planted based on accumulated points.

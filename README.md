@@ -15,6 +15,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 * Firebase 8.0 (BAAS - Backend as a Service)
 * Translink API https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/rtti
 * Team images from https://oldschool.runescape.wiki/
+* Default profile image from https://en.wikipedia.org/wiki/File:Default_pfp.svg 
 
 ## 4. Complete setup/installation/usage
 State what a user needs to do when they come to your project.  How do others start using your code or application?
@@ -56,15 +57,15 @@ It has the following subfolders and files:
     /bronze-tree.png         # Created by Kevin
     /Connected.jpg           # 
     /Connected.png           # Edited by Kevin
-    /defaultPic.png          # 
+    /defaultPic.png          # from https://en.wikipedia.org/wiki/File:Default_pfp.svg
     /evergreen-tree.png      # from https://oldschool.runescape.wiki/
     /gold-tree.png           # created by Kevin
     /maple-tree.png          # from https://oldschool.runescape.wiki/
     /mhrxXPKq6Xfwy6jHIH9hBwSPP0k2.jpg
     /oak-tree.png            # from https://oldschool.runescape.wiki/
     /silver-tree.png         # created by Kevin
-    /treelogo.png            # 
-    /TreePlant.png           # 
+    /treelogo.png            # created by Sunwoo
+    /TreePlant.png           # created by Sunwoo
 ├── scripts                  # Folder for scripts
     /authentication.js       # 
     /authLogin.js            # 

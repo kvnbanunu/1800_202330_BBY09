@@ -6,7 +6,11 @@ function login() {
 
     // Validate input fields
     if (validate_email(email) == false || validate_password(password) == false) {
-        alert('Email/Password is invalid')
+        // alert('Email/Password is invalid')
+        Swal.fire({
+            title: "Email or Password is invalid",
+            icon: "error"
+          });
         return
         // Don't continue running the code
     }

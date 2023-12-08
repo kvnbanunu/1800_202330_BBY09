@@ -6,6 +6,11 @@ function logouttt() {
 
       // Sign-out successful.
       alert('See you next time!');
+      Swal.fire({
+        title: "Logout Successful",
+        text: "See you next time!",
+        icon: "success"
+      });
     }).catch((error) => {
       // An error happened.
     });

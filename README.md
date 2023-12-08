@@ -1,4 +1,5 @@
 # BusRoots
+Travel Green, Plant Trees
 
 ## 1. Project Description
 BusRoots encourages everyone to take transit by rewarding users points for every trip they take. Trees are planted based on accumulated points.
@@ -42,13 +43,13 @@ Content of the project folder:
 ├── .gitignore               # Git ignore file
 ├── aboutus.html             # about us HTML file, includes background information of the app.
 ├── index.html               # landing HTML file, this is what users see when you come to url.
-├── leaderboard.html         # leaderboard HTML file, you can see how you rank against other users.
+├── leaderboard.html         # leaderboard HTML file, you can see how you rank against other users. Developed by Kevin.
 ├── login.html               # login HTML file, login to an existing user account.
-├── main.html                # main HTML file, with the function to earn points.
+├── main.html                # main HTML file, with the function to earn points. Developed by Kevin.
 ├── profile.html             # profile HTML file, see and change user profile data.
 ├── README.md                #
 ├── signup.html              # signup HTML file, sign up for a user account.
-├── team.html                # team HTML file, user selects which team to join.
+├── team.html                # team HTML file, user selects which team to join. Developed by Kevin.
 └── template.html            # template HTML file to easily create new pages with the same skeleton
 
 It has the following subfolders and files:
@@ -70,12 +71,12 @@ It has the following subfolders and files:
     /authentication.js       # 
     /authLogin.js            # 
     /authSignUp.js           # 
-    /leaderboard.js          # script for leaderboard.html
-    /main.js                 # script for main.html, fetches location from translink API and converts distance to points, rewarded points are written to firebase
+    /leaderboard.js          # script for leaderboard.html. Developed by Kevin.
+    /main.js                 # script for main.html, fetches location from translink API and converts distance to reward points. Developed by Kevin.
     /profile.js              # script for profile.html
     /script.js               # logout script
     /skeleton.js             # script for insterting navbar and footer to each page
-    /team.js                 # script for team.html, user selects a team from 3 choices
+    /team.js                 # script for team.html, user selects a team from 3 choices. Developed by Kevin.
 ├── styles                   # Folder for styles
     /aboutus.css             # css for aboutus.html
     /bigContent.css          # snaps footer to bottom of the page

@@ -76,7 +76,7 @@ function joinTeam() {
       }
   } else {
     Swal.fire({
-      title: "No team seleced",
+      title: "No team selected",
       text: "Please select a team",
       icon: "error"
     });

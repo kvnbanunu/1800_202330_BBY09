@@ -5,7 +5,7 @@ function logouttt() {
   firebase.auth().signOut().then(() => {
 
       // Sign-out successful.
-      alert('See you next time!');
+      // alert('See you next time!');
       Swal.fire({
         title: "Logout Successful",
         text: "See you next time!",
